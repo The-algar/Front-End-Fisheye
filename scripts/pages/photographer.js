@@ -15,19 +15,20 @@ async function getPhotographerDataAndMedia(photographId) {
 async function displayHeaderData(photographerData) { //affiche le cadre des infos du photographe
     const headerSection = document.querySelector(".photograph-header");
     const h2=document.createElement('h2');
-    h2.setAttribute("aria-label","Nom du photographe" + photographerData.name);
+    h2.setAttribute("aria-label","Nom du photographe"+ ", " + photographerData.name);
     h2.innerHTML=photographerData.name;
     const plocation=document.createElement('p');
-    plocation.setAttribute("aria-label", "Lieu d'activité du photographe" + photographerData.city + ", " + photographerData.country);
+    plocation.setAttribute("aria-label", "Lieu d'activité du photographe"+ ", " + photographerData.city + ", " + photographerData.country);
     plocation.innerHTML = photographerData.city + ", " + photographerData.country;
     const h3 = document.createElement('h3');
     h3.innerHTML=photographerData.tagline;
-    h3.setAttribute("aria-label","devise du photographe"+photographerData.tagline);
+    h3.setAttribute("aria-label","Devise du photographe" + " : " + photographerData.tagline);
     const img = document.createElement( 'img' );
-    img.setAttribute("alt","portrait du photographe");
+    img.setAttribute("alt","Portrait du photographe dans un médaillon rond");
     img.setAttribute("src", "./assets/photographers/" + photographerData.portrait);
 
-    const left=document.createElement("div");
+    const left = document.createElement("div");
+    left.setAttribute("id", "header-text");
     headerSection.appendChild(left);
     left.appendChild(h2);
     left.appendChild(plocation);
