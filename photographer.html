@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link href="css/style.css" rel="stylesheet" type="text/css" />
+    <link href="css/photographer.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="assets/icons/favicon.svg">
@@ -21,7 +21,7 @@
 
       <div class="sort" aria-label="triez les photos par titre, date ou popularité">Trier par
         <container id="sortingMenu" aria-haspopup="true"  aria-expanded="false"
-        aria-label="Tirez par" tabindex="0">
+        aria-label="Triez par" tabindex="0">
           <button id="openMenuButton" class="chevron-icon fas fa-chevron-down" aria-label="cliquez pour ouvrir le menu"></button>
           <span class="option selected" id="option1" tabindex="-1">Nom</span>
           <span class="option" id="option2" tabindex="-1">Date</span>
@@ -29,13 +29,10 @@
         </container>
       </div>
 
-      <div class="media_container">
-      </div>
-      <div class="totalLikes" role="complementary">
-          <div class=photographerLikes></div>
-          <div class=price></div>
-      </div>
-    </main>
+      <div class="media-container"></div>
+
+    <div class="rate-total-like" aria-label="total likes and rate per day" tabindex="0"></div>
+  </main>
 
     <div id="contact_modal" aria-hidden="true" role="dialog" aria-describedby="modalTitle" tabindex="-1">
 			<div class="modal">
@@ -76,10 +73,11 @@
       <div id="close"></div>
       <div class="carousel_media"></div>
     </div>
-    
+
     <script src="scripts/utils/contactForm.js"></script>
     <script src="scripts/utils/loadJsonData.js"></script>
-    <script src="scripts/pages/photographer.js"></script>
     <script src="scripts/factories/Photographer.js"></script>
+    <script src="scripts/pages/photographer.js"></script>
+
   </body>
 </html>

@@ -17,6 +17,7 @@ async function getPhotographers() {
             const photographerModel = photographerFactory(photographer);
 
             console.log(photographer)
+            
             const userCardDOM = photographerModel.getUserCardDOM();
             photographersSection.appendChild(userCardDOM); //replace appendChild(userCardDOM) by 
             //photographersSection.insertAdjacentHTML("beforeend", userCardDOM)
