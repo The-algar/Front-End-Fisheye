@@ -1,9 +1,10 @@
 //lit le fichier json pour en récupérer les données des photographes
 async function getPhotographers() {
-    const response = await  fetch("./data/photographers.json");
-    const data = await response.json();
+    const indexPhotographers = await  fetch("./data/photographers.json");
+    const data = await indexPhotographers.json();
 
-    console.log(data)
+    console.log(data);
+
     return {
         photographers: data.photographers // could be: return ({ photographers: [...data.photographers] })
     };

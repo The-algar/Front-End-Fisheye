@@ -3,7 +3,7 @@ function adaCompliant(modal){
     if (modal.style.display=="none"){return};
     //blocage du tab dans la modale
     document.addEventListener('keydown',(e)=>{
-        if(e.keyCode==27){
+        if(e.keyCode==27) {
             closeModal()
             closeCarousel()
         }
@@ -15,7 +15,7 @@ function adaCompliant(modal){
     document.addEventListener('keydown',(e)=>{
         if (e.keyCode!==9){
             return;
-        }else if (e.shiftKey){//pour un shift+tab
+        }else if (e.shiftKey) { //pour un shift+tab
             if(document.activeElement==firstFocusableElement){
                 lastFocusableElement.focus();
                 e.preventDefault();
