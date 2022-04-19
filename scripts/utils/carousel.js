@@ -1,39 +1,45 @@
-const carousel=document.getElementById("carousel_modal");
+const carousel = document.getElementById("carousel_modal");
 
-function displayCarousel(e,typeOfMedia,mediaAdress,photographerMedia,mediaDirectory,title){
+function displayCarousel(e, typeOfMedia, mediaAdress, photographerMedia, mediaDirectory, title) {
     carousel.setAttribute('aria-hidden','false');
     main.setAttribute('aria-hidden','true');
     carousel.style.display = "block";
-    if (typeOfMedia=="image"){
-        document.querySelector(".carousel_media").innerHTML="<img src="+mediaAdress+" alt="+title+" tabindex='0'>";
-    }else if(typeOfMedia=="video"){
-        document.querySelector(".carousel_media").innerHTML="<video src="+mediaAdress+" autoplay title="+title+" tabindex='0'></video>";
-    }else{
-        console.log("error in display carousel");
+    if (typeOfMedia == "image") {
+        document.querySelector(".carousel_media").innerHTML = "<img src=" + mediaAdress + " alt=" + title + " tabindex='0'>";
     }
-    const media=mediaAdress.split('/')[mediaAdress.split('/').length-1];//récupère le nom du fichier
-    const place=placeInCarousel(photographerMedia,media);//récupère l'index du media dans le tableau de media trié
+    else if(typeOfMedia == "video") {
+        document.querySelector(".carousel_media").innerHTML = "<video src=" + mediaAdress + "title=" + title + " tabindex='0'></video>";
+    }
+    else {
+        console.log("error while displaying carousel");
+
+    }//récupère le nom du fichier
+    const media = mediaAdress.split('/')[mediaAdress.split('/').length-1];
+
+    //récupère l'index du media dans le tableau de media trié
+    const rank = rankInCarousel(photographerMedia,media);
+
     //chevron de gauche
-    const left=document.getElementById("left-arrow");
-    left.innerHTML='<i class="fas fa-chevron-left" aria-label="image précédente" tabindex="0"></i>';
-    left.addEventListener("click",(e)=>changeMedia(e,photographerMedia,place-1,mediaDirectory));
+    const left = document.getElementById("left-arrow");
+    left.innerHTML = '<i class="fas fa-chevron-left" aria-label="image précédente" tabindex="0"></i>';
+    left.addEventListener("click", (e) => changeMedia(e, photographerMedia, rank-1, mediaDirectory));
     //chevron de droite
-    const right=document.getElementById("right-arrow");
-    right.innerHTML='<i class="fas fa-chevron-right" aria-label="image suivante" tabindex="0"></i>';
-    right.addEventListener("click",(e)=>changeMedia(e,photographerMedia,place+1,mediaDirectory));
+    const right = document.getElementById("right-arrow");
+    right.innerHTML = '<i class="fas fa-chevron-right" aria-label="image suivante" tabindex="0"></i>';
+    right.addEventListener("click", (e) => changeMedia(e, photographerMedia, rank+1, mediaDirectory));
     //croix de fermeture
-    const close=document.getElementById("close");
-    close.innerHTML='<i class="fas fa-times" id="close" aria-label="fermer le carousel" tabindex="0"></i>';
-    close.addEventListener("click",(e)=>closeCarousel());
+    const close = document.getElementById("close");
+    close.innerHTML = '<i class="fas fa-times" id="close" aria-label="fermer le carousel" tabindex="0"></i>';
+    close.addEventListener("click", (e) => closeCarousel());
     //navigation clavier
-    adaCompliant(carousel);
+    ariaCompliant(carousel);
     document.addEventListener('keydown',(e)=>{
         if(e.keyCode==27 && carousel.getAttribute('aria-hidden')=='false'){
             closeCarousel()
         }else if (e.keyCode==37 && carousel.getAttribute('aria-hidden')=='false'){
-            changeMedia(e,photographerMedia,place-1,mediaDirectory)
+            changeMedia(e,photographerMedia,rank-1,mediaDirectory)
         }else if (e.keyCode==39 && carousel.getAttribute('aria-hidden')=='false'){
-            changeMedia(e,photographerMedia,place+1,mediaDirectory)
+            changeMedia(e,photographerMedia,rank+1,mediaDirectory)
         }
     })
 }
@@ -45,30 +51,30 @@ function closeCarousel(){
     document.querySelector(".carousel_media").innerHTML="";
 }
 
-function placeInCarousel(photographerMedia,media){
+function rankInCarousel(photographerMedia,media){
     return photographerMedia.findIndex(object=>object.image==media||object.video==media);
 }
 
-function changeMedia(e,photographerMedia,place,mediaDirectory){ 
+function changeMedia(e,photographerMedia,rank,mediaDirectory){ 
     //faire un carousel infini
-    if (place<0){place=photographerMedia.length-1}
-    else if (place>photographerMedia.length-1) {
-        place=0 };
+    if (rank<0){rank=photographerMedia.length-1}
+    else if (rank>photographerMedia.length-1) {
+        rank=0 };
     //déclaration des variables 
     var typeOfMedia="";
     var mediaAdress="";
     var title="";
     //determine typeOfMedia et mediaAdress du media à afficher
-    if (Object.keys(photographerMedia[place]).find(key => key == "image")){
+    if (Object.keys(photographerMedia[rank]).find(key => key == "image")){
         typeOfMedia = "image";
-        const image = photographerMedia[place].image;
+        const image = photographerMedia[rank].image;
         mediaAdress = "./assets/photographers/" + mediaDirectory + "/" + image;
-        title = photographerMedia[place].title;
-    } else if(Object.keys(photographerMedia[place]).find(key => key == "video")){
+        title = photographerMedia[rank].title;
+    } else if(Object.keys(photographerMedia[rank]).find(key => key == "video")){
         typeOfMedia = "video";
-        const video = photographerMedia[place].video;
+        const video = photographerMedia[rank].video;
         mediaAdress = "./assets/photographers/" + mediaDirectory + "/" + video;
-        title = photographerMedia[place].video.replaceAll('_', ' ');
+        title = photographerMedia[rank].video.replaceAll('_', ' ');
         title = title.replace('.mp4', '');
     }else {
         console.log("problem in loadedMedia()");

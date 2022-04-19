@@ -1,6 +1,6 @@
 
 function imageFactory(data, mediaDirectory, mediaCardHtml){
-    const {title, image, id, likes, date, price } = data;
+    const {title, image, likes, date } = data;
     heartColor = data.liked;
     if (heartColor == undefined){
         heartColor = "far fa-heart";
@@ -25,12 +25,12 @@ function imageFactory(data, mediaDirectory, mediaCardHtml){
 }
 
 function videoFactory(data, mediaDirectory, mediaCardHtml){
-    const { video, id, likes, date, price } = data;
+    const { video, likes, date } = data;
     var title = data.video.replaceAll( '_', ' ');
     title = title.replace('.mp4', ' ');
     data.title = title;
     heartColor = data.liked;
-    if (heartColor == undefined){
+    if (heartColor == undefined) {
         heartColor = "far fa-heart";
     };
 

@@ -127,7 +127,7 @@ async function initPhotographer() {
 
     //Menu de selection
     openCloseMenu();
-    adaMenu();
+    ariaMenu();
     selectedOption(photographerMedia, mediaDirectory);
 };
 
