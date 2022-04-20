@@ -1,6 +1,6 @@
 
-function imageFactory(data, mediaDirectory, mediaCardHtml){
-    const {title, image, likes, date } = data;
+function imageFactory(data, mediaDirectory, photographerMedia, mediaCardHtml){
+    const {title, image, id, likes, date, price} = data;
     heartColor = data.liked;
     if (heartColor == undefined){
         heartColor = "far fa-heart";
@@ -21,11 +21,11 @@ function imageFactory(data, mediaDirectory, mediaCardHtml){
         `
         return mediaCardHtml;
     }
-    return { likes, title, date, getMediaCardDOM }
+    return {likes, title, date, getMediaCardDOM }
 }
 
-function videoFactory(data, mediaDirectory, mediaCardHtml){
-    const { video, likes, date } = data;
+function videoFactory(data, mediaDirectory, photographerMedia, mediaCardHtml){
+    const {video, id, likes, date, price} = data;
     var title = data.video.replaceAll( '_', ' ');
     title = title.replace('.mp4', ' ');
     data.title = title;

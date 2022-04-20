@@ -2,12 +2,12 @@ async function getPhotographerDataAndMedia(photographId) {
     const pJsonData = await loadJsonData();
     const photographers = pJsonData.photographers;
     const photographerData = photographers.find(photographer => photographer.id == photographId);
-    const photographerMedia = pJsonData.media.filter(medium => medium.photographerId == photographId);
+    const photographerMedia = pJsonData.media.filter(media => media.photographerId == photographId);
 
     //console.log(pJsonData);
     //console.log(photographers);
-    //console.log(photographerData);
-    //console.log(photographerMedia);
+    console.log(photographerData);
+    console.log(photographerMedia);
 
     return [photographerData, photographerMedia];
 }
