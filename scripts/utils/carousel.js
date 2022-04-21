@@ -17,7 +17,7 @@ function displayCarousel(e, typeOfMedia, mediaAdress, photographerMedia, mediaDi
     const media = mediaAdress.split('/')[mediaAdress.split('/').length-1];
 
     //récupère l'index du media dans le tableau de media trié
-    const rank = rankInCarousel(photographerMedia,media);
+    const rank = rankInCarousel(photographerMedia, media);
 
     //chevron de gauche
     const left = document.getElementById("left-arrow");
@@ -34,11 +34,11 @@ function displayCarousel(e, typeOfMedia, mediaAdress, photographerMedia, mediaDi
     //navigation clavier
     ariaCompliant(carousel);
     document.addEventListener('keydown',(e)=>{
-        if(e.keyCode==27 && carousel.getAttribute('aria-hidden')=='false'){
+        if(e.code == 27 && carousel.getAttribute('aria-hidden')=='false'){
             closeCarousel()
-        }else if (e.keyCode==37 && carousel.getAttribute('aria-hidden')=='false'){
+        }else if (e.code == 37 && carousel.getAttribute('aria-hidden')=='false'){
             changeMedia(e,photographerMedia,rank-1,mediaDirectory)
-        }else if (e.keyCode==39 && carousel.getAttribute('aria-hidden')=='false'){
+        }else if (e.code == 39 && carousel.getAttribute('aria-hidden')=='false'){
             changeMedia(e,photographerMedia,rank+1,mediaDirectory)
         }
     })

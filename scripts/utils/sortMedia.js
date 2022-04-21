@@ -1,4 +1,4 @@
-function selectedOption(photographerMedia,mediaDirectory) { 
+function selectedOption(photographerMedia, mediaDirectory) { 
     //écoute le clic sur une option et définit la propriété (l'option) sélectionnée
     const options = document.querySelectorAll(".option");
     var selectedProperty = " ";

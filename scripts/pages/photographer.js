@@ -2,7 +2,7 @@ async function getPhotographerDataAndMedia(photographId) {
     const pJsonData = await loadJsonData();
     const photographers = pJsonData.photographers;
     const photographerData = photographers.find(photographer => photographer.id == photographId);
-    const photographerMedia = pJsonData.media.filter(media => media.photographerId == photographId);
+    const photographerMedia = pJsonData.media.filter(medium => medium.photographerId == photographId);
 
     //console.log(pJsonData);
     //console.log(photographers);
@@ -59,7 +59,7 @@ async function displayMedia(photographerMedia, mediaDirectory) {
     photographerMedia.forEach(element => {
         const mediaModel = mediaFactory(element, mediaDirectory, photographerMedia, mediaCardHtml);
         element.title = mediaModel.title;
-        mediaCardHtml += mediaModel.getMediaCardDOM();
+        mediaCardHtml = mediaModel.getMediaCardDOM();
         totalLikes += element.likes;
     });
     

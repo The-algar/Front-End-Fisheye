@@ -14,6 +14,7 @@ function manageLikes(totalLikes, photographerMedia, mediaDirectory) {
             var mediaLikes = heart.parentElement.previousElementSibling.textContent;
 
             mediaLikes = parseInt(mediaLikes,10);
+            
             //ajoute un like sur le média
             mediaLikes ++;
 
