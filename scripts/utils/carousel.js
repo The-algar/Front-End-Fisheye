@@ -23,14 +23,17 @@ function displayCarousel(e, typeOfMedia, mediaAdress, photographerMedia, mediaDi
     const left = document.getElementById("left-arrow");
     left.innerHTML = '<i class="fas fa-chevron-left" aria-label="image précédente" tabindex="0"></i>';
     left.addEventListener("click", (e) => changeMedia(e, photographerMedia, rank-1, mediaDirectory));
+
     //chevron de droite
     const right = document.getElementById("right-arrow");
     right.innerHTML = '<i class="fas fa-chevron-right" aria-label="image suivante" tabindex="0"></i>';
     right.addEventListener("click", (e) => changeMedia(e, photographerMedia, rank+1, mediaDirectory));
+
     //croix de fermeture
     const close = document.getElementById("close");
     close.innerHTML = '<i class="fas fa-times" id="close" aria-label="fermer le carousel" tabindex="0"></i>';
     close.addEventListener("click", (e) => closeCarousel());
+
     //navigation clavier
     ariaCompliant(carousel);
     document.addEventListener('keydown',(e)=>{
@@ -65,18 +68,20 @@ function changeMedia(e,photographerMedia,rank,mediaDirectory){
     var mediaAdress="";
     var title="";
     //determine typeOfMedia et mediaAdress du media à afficher
-    if (Object.keys(photographerMedia[rank]).find(key => key == "image")){
+    if (Object.keys(photographerMedia[rank]).find(key => key == "image")) {
         typeOfMedia = "image";
         const image = photographerMedia[rank].image;
-        mediaAdress = "./assets/photographers/" + mediaDirectory + "/" + image;
+        mediaAdress = "./assets/images/" + mediaDirectory + "/" + image;
         title = photographerMedia[rank].title;
-    } else if(Object.keys(photographerMedia[rank]).find(key => key == "video")){
+    } 
+    else if(Object.keys(photographerMedia[rank]).find(key => key == "video")){
         typeOfMedia = "video";
         const video = photographerMedia[rank].video;
-        mediaAdress = "./assets/photographers/" + mediaDirectory + "/" + video;
+        mediaAdress = "./assets/images/" + mediaDirectory + "/" + video;
         title = photographerMedia[rank].video.replaceAll('_', ' ');
-        title = title.replace('.mp4', '');
-    }else {
+        title = title.replace('.mp4', ' ');
+    } 
+    else {
         console.log("problem in loadedMedia()");
     }
     displayCarousel(e, typeOfMedia, mediaAdress, photographerMedia, mediaDirectory, title);

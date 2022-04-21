@@ -4,6 +4,10 @@
     display: none;
 }
 
+#carousel_modal{
+    display:none;
+}
+
 /***** PHOTOGRAPH PAGE HEADER *****/
 header, .logo, h1 {
     display: flex;
