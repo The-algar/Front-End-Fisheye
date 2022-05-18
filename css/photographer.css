@@ -8,7 +8,7 @@
     display:none;
 }
 
-/***** PHOTOGRAPH PAGE HEADER *****/
+/***** PHOTOGRAPHER PAGE HEADER *****/
 header, .logo, h1 {
     display: flex;
     flex-direction: row;
@@ -33,6 +33,11 @@ header, .logo, h1 {
     padding: 5vw;
 }
 
+@media screen and (max-width: 375px) {
+    .photograph-header {
+        padding: 0 0 5vw 0 !important;
+        }
+    } 
 
 .photograph-header img {
     height: 200px;
@@ -42,6 +47,13 @@ header, .logo, h1 {
        object-fit: cover;
 }
 
+@media screen and (max-width: 1200px) {
+.photograph-header {
+    justify-content: space-evenly;
+    margin: 0 !important;
+    }    
+}
+
 @media screen and (max-width: 820px) {
 header, .logo, .photograph-header {
     display: flex;
@@ -49,6 +61,7 @@ header, .logo, .photograph-header {
     justify-content: center;
     flex-direction: row-reverse;
     margin: 0 !important;
+    row-gap: 10px;
     }    
 }
 
@@ -103,7 +116,7 @@ header, .logo, .photograph-header {
     padding: 0;
 }
 
-@media screen and (max-width: 820px) {
+@media screen and (max-width: 1200px) {
 .photograph-header h2 {
         font-size: 48px;
         padding-top: 20px;
@@ -125,16 +138,16 @@ header, .logo, .photograph-header {
 }
 
 
-@media screen and (max-width: 420px) {
+/* @media screen and (max-width: 420px) {
     header, .logo, .photograph-header {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-}
+} */
 
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 420px) {
     body {
         min-width: 375px;
     }
@@ -160,25 +173,44 @@ header, .logo, .photograph-header {
 }
 
 /***** SORTING MENU *****/
-a{
-    color: white;
-}
-a:visited{
-    color: white;
-}
 
-.sort{
-    margin:0 6vw;
-    padding: 0;
+.menu {
     display: flex;
-    position: relative;
-    padding-top: 20px;
-    z-index: 100;
+    justify-content: flex-start;
+    padding-left: 10vw;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
-#openMenuButton{
+a {
+    color: white;
+}
+a:visited {
+    color: white;
+}
+
+
+.sort {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    position: relative;
+    margin: 0;
+    padding-left: 20px;
+        /*padding-right: 40px; */
+    /* z-index: 100; */
+}
+
+@media screen and (max-width: 320px) {
+.sort {
+    padding-left: 0 !important;
+    margin: 0 !important;
+    }
+}
+
+#openMenuButton {
     cursor: pointer;
-    position:absolute;
+    position: absolute;
     right: 10px;
     top:15px;
     border:none;
@@ -188,12 +220,22 @@ a:visited{
     transition: 100ms;
 }
 
-#openMenuButton.reverse{
+@media screen and (max-width: 820px) {
+    .sort #sortingMenu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 20px, 0, 0, 0 !important;
+    }
+}
+
+#openMenuButton.reverse {
     transform: rotate(180deg);
     transition: 100ms;
 }
 
-#sortingMenu{
+#sortingMenu {
     background-color: #901C1C;
     font-weight: bold;
     color: white;
@@ -203,13 +245,46 @@ a:visited{
     margin-left: 20px;
     width: 130px;
     position: absolute;
-    left : 5vw;
+    left : 10vw;
     padding: 0 10px;
     border: solid 2px transparent;
 }
 
+@media screen and (max-width: 820px) {
+    .menu, .sort {
+        left : -3vw;
+        margin-top: 3.5vw;
+        margin-bottom: 3.5vw;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    #sortingMenu {
+        margin-left: 10vw;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    .sort {
+        padding:0;
+        margin-top: 3vw;
+        margin-bottom: 3vw;
+    }
+}
+
+@media screen and (max-width: 620px) {
+    #sortingMenu {
+        margin-left: 10vw;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .sort, #sortingMenu {
+        margin-left: 15vw;
+        margin-bottom: 5vw;
+    }
+}
 .option {
-    
     padding: 11px;
     margin: 0;
     display: none;
@@ -234,13 +309,23 @@ a:visited{
 .media-container {
     margin: 0;
     padding: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: 20vw 20vw 20vw;
+    grid-template-rows: 20vw;
+    grid-gap: 10%;
+    height: 100vh;
+    padding-top: 2.5vw;
+    margin-left: 10vw;
+}
+
+@media screen and (max-width: 320px) {
+    .media-container {
+        padding-top: 10vw;
+    }
 }
 
 .media {
-    margin: 5vw ;
+    margin: 0 ;
     padding: 0;
     width: 20vw;
     height: 20vw;
@@ -286,12 +371,13 @@ a:visited{
 
 /***** TOTAL LIKES *****/
 
-.totalLikes{
+.likesTotal{
     position:absolute;
     position: fixed;
     bottom:0;
     right:20px;
     background-color: #DB8876;
+    color: white;
     width: 200px;
     height: 30px;
     display: flex;
@@ -299,8 +385,8 @@ a:visited{
     padding: 0 20px;
     align-items: center;
 }
-.totalLikes .fa-heart{
-    color: black;
+.likesTotal .fa-heart{
+    color: white;
 }
 
 /***** CAROUSEL *****/
@@ -435,4 +521,4 @@ form input {
 
 .off{
     background-color: gray;
-}
+} 

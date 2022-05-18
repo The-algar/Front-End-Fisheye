@@ -53,14 +53,14 @@ async function displayMedia(photographerMedia, mediaDirectory) {
     const mediaContainer = document.querySelector(".media-container");
     mediaContainer.innerHTML = " ";
 
-    var totalLikes = 0;
+    var likesTotal = 0;
     var mediaCardHtml = " ";
 
     photographerMedia.forEach(element => {
         const mediaModel = mediaFactory(element, mediaDirectory, photographerMedia, mediaCardHtml);
         element.title = mediaModel.title;
         mediaCardHtml = mediaModel.getMediaCardDOM();
-        totalLikes += element.likes;
+        likesTotal+=element.likes;
     });
     
     //mediaContainer.insertAdjacentHTML("beforeend", mediaCardHtml)
@@ -96,17 +96,17 @@ async function displayMedia(photographerMedia, mediaDirectory) {
             }
     });
     //gestion des likes
-    displayTotalLikes(totalLikes);
-    manageLikes(totalLikes, photographerMedia, mediaDirectory);
+    displayLikesTotal(likesTotal);
+    manageLikes(likesTotal, photographerMedia, mediaDirectory);
 }
 
-async function displayLikesAndPrice(price){
+async function displayLikesAndPrice(price) {
     document.querySelector(".price").innerHTML = price + "€/ jour ";
 }
 
 async function initPhotographer() {
     //récupère l'ID du photographe
-    const id = window.location.href.split( "=")[1]; //on peut ajouter .split("#")[0]; car selon le navigateur un # se rajoute à la fin de l'adresse en tappant entrer
+    const id = window.location.href.split( "=")[1].split("#")[0]; //on  ajoute .split("#")[0]; car selon le navigateur un # se rajoute à la fin de l'adresse en tappant entrer
     
     // Récupère les datas des photographes en fonction de l'ID
     const allPhotographerData = await getPhotographerDataAndMedia(id);

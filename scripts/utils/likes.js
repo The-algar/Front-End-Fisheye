@@ -1,29 +1,29 @@
 //affiche le nombre total de likes dans le cadre du bas
-function displayTotalLikes(totalLikes) {
+function displayLikesTotal(likesTotal) {
     document.querySelector(".photographerLikes").setAttribute("aria-label", "nombre total de likes du photographe");
-    document.querySelector(".photographerLikes").innerHTML = totalLikes + '<i class="fa-solid fa-heart"></i>';
+    document.querySelector(".photographerLikes").innerHTML = likesTotal + '<i class="fa-solid fa-heart"></i>';
 }
 
 //incrémente les likes au clic sur le coeur
-function manageLikes(totalLikes, photographerMedia, mediaDirectory) { 
+function manageLikes(likesTotal, photographerMedia, mediaDirectory) { 
     const hearts = Array.from(document.getElementsByClassName("fa-heart"));
 
     //écoute les events sur l'icone coeur         
     hearts.forEach(heart => {
-        heart.addEventListener("click",() => {
+        heart.addEventListener("click", () => {
             var mediaLikes = heart.parentElement.previousElementSibling.textContent;
 
             mediaLikes = parseInt(mediaLikes,10);
             
             //ajoute un like sur le média
-            mediaLikes ++;
+            mediaLikes++;
 
             //ajoute un like au nombre total de like du photographe
-            totalLikes ++;
+            likesTotal++;
 
             addLikeInPhotographerMedia(photographerMedia, mediaLikes, heart.id);
             displayMedia(photographerMedia, mediaDirectory);
-            displayTotalLikes(totalLikes);
+            displayLikesTotal(likesTotal);
         })
         //liker au clavier avec entrée
         heart.addEventListener("keyup", (e) => {
