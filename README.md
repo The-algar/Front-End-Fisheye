@@ -23,7 +23,7 @@ Ce repo a été réalisé dans le cadre d'un projet pour la formation DA Javascr
 
 - Utilisation du design pattern pour gérer les medias (vidéo ou photo) : Factory Method
 
-#Technologies utilisées :
+# Technologies utilisées :
 
 - CSS
 
