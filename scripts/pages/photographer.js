@@ -60,7 +60,7 @@ async function displayMedia(photographerMedia, mediaDirectory) {
         const mediaModel = mediaFactory(element, mediaDirectory, photographerMedia, mediaCardHtml);
         element.title = mediaModel.title;
         mediaCardHtml = mediaModel.getMediaCardDOM();
-        likesTotal+=element.likes;
+        likesTotal += element.likes;
     });
     
     //mediaContainer.insertAdjacentHTML("beforeend", mediaCardHtml)
@@ -101,7 +101,7 @@ async function displayMedia(photographerMedia, mediaDirectory) {
 }
 
 async function displayLikesAndPrice(price) {
-    document.querySelector(".price").innerHTML = price + "€/ jour ";
+    document.querySelector(".price").innerHTML = price + (' ')  + "€/ jour ";
 }
 
 async function initPhotographer() {

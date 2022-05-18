@@ -13,7 +13,7 @@ function imageFactory(data, mediaDirectory, photographerMedia, mediaCardHtml){
             <div class="titleAndLikes">
                 <div class="title">${title}</div>
                 <div class="likes">
-                    <div aria-label="nombre de likes" tabindex="0">${likes}</div>
+                    <div aria-label="nombre de likes" tabindex="0">${likes}&nbsp;</div>
                     <div aria-label="cliquez pour liker"> <i class="${heartColor}" id="${title}" tabindex="0"></i></div> 
                 </div> 
             </div>

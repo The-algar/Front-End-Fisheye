@@ -21,13 +21,13 @@ function photographerFactory(data) {
         h2.textContent = name;
 
         const location = document.createElement( 'p' );
-        location.textContent = city +", " + country;
+        location.textContent = city + ", " + country;
 
         const h3 = document.createElement( 'h3' );
         h3.textContent = tagline;
 
         const h4 = document.createElement( 'h4' );
-        h4.textContent = price+"€/jour";
+        h4.textContent = price + "€/jour";
 
         // ajout des balises dans la balise article
         article.appendChild(img);

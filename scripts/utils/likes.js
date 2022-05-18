@@ -1,7 +1,7 @@
 //affiche le nombre total de likes dans le cadre du bas
 function displayLikesTotal(likesTotal) {
     document.querySelector(".photographerLikes").setAttribute("aria-label", "nombre total de likes du photographe");
-    document.querySelector(".photographerLikes").innerHTML = likesTotal + '<i class="fa-solid fa-heart"></i>';
+    document.querySelector(".photographerLikes").innerHTML = likesTotal + (' ') + '<i class="fa-solid fa-heart"></i>';
 }
 
 //incrémente les likes au clic sur le coeur
