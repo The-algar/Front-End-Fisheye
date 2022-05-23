@@ -104,9 +104,9 @@ function openMenu() {
     const option1 = document.getElementById("option1");
     const option2 = document.getElementById("option2");
     const option3 = document.getElementById("option3");
-    option1.tabIndex = -1;
-    option2.tabIndex = -1;
-    option3.tabIndex = -1;
+    option1.tabIndex = 0;
+    option2.tabIndex = 0;
+    option3.tabIndex = 0;
     option1.classList.add("menuOpened");
     option2.classList.add("menuOpened");
     option3.classList.add("menuOpened");

@@ -6,7 +6,7 @@ function ariaMenu() {
     const option3 = document.getElementById("option3");
     const openMenuButton = document.getElementById("openMenuButton");
     var focusedOption = " ";
-    document.addEventListener('keydown',(e) => {
+    document.addEventListener('keydown', (e) => {
         const active = document.activeElement;
         //si on est dans le menu, on écoute les fleches
         if(active == sortingMenu || active == option1 || active == option2 || active == option3) {
