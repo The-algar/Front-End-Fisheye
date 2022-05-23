@@ -13,13 +13,13 @@ function ariaMenu() {
                 //Key up
                 if(e.key == 38) {
                 e.preventDefault();
-                if (focusedOption == " " || focusedOption == option2){
+                if (focusedOption == " " || focusedOption == option2) {
                     option1.focus();
                     focusedOption = option1;
-                } else if(focusedOption == option1){
+                } else if(focusedOption == option1) {
                     option3.focus();
                     focusedOption = option3;
-                } else if(focusedOption == option3){
+                } else if(focusedOption == option3) {
                     option2.focus();
                     focusedOption = option2;
                 } else { 
@@ -27,16 +27,16 @@ function ariaMenu() {
                 }
             } else if (e.key == 40 ){//key down
                 e.preventDefault();
-                if (focusedOption == " " || focusedOption == option3){
+                if (focusedOption == " " || focusedOption == option3) {
                     option1.focus();
                     focusedOption = option1;
-                }else if(focusedOption == option1){
+                } else if(focusedOption == option1) {
                     option2.focus();
                     focusedOption = option2;
-                }else if(focusedOption == option2){
+                } else if(focusedOption == option2) {
                     option3.focus();
                     focusedOption = option3;
-                }else{ 
+                } else { 
                     null
                 }
             }else if (e.key == 9){
