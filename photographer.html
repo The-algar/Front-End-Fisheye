@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="fr">
   <head>
     <link href="css/photographer.css" rel="stylesheet" type="text/css" />
     <meta charset="utf-8">
@@ -21,12 +21,12 @@
 
     <div class="menu">
       <div class="sort" aria-label="triez les photos par titre, date ou popularité">Trier par
-        <container id="sortingMenu" aria-haspopup="true"  aria-expanded="false"
-        aria-label="Triez par" tabindex="0">
+        <container id="sortingMenu" aria-haspopup="true"
+        aria-label="Triez par" tabindex="-1">
           <button id="openMenuButton" class="chevron-icon fas fa-chevron-down" aria-label="cliquez pour ouvrir le menu"></button>
           <span class="option selected" id="option1" tabindex="-1">Nom</span>
           <span class="option" id="option2" tabindex="-1">Date</span>
-          <span class="option last" id="option3" tabindex="-1">Popularité</span>
+          <span class="option last" id="option3" tabindex = "-1">Popularité</span>
         </container>
       </div>
     </div>
@@ -39,11 +39,11 @@
     </div>
   </main>
 
-    <div id="contact_modal" aria-hidden="true" role="dialog" aria-describedby="modalTitle" tabindex="-1">
+    <div id="contact_modal" aria-hidden="true" role="dialog" tabindex="-1">
 			<div class="modal">
 				<header>
           <div class="contactHeader" tabindex="0" aria-label="contactez le photographe">
-            <h2 id="modalTitle" >Contactez-moi</h2>
+            <h2 id="modalTitle">Contactez-moi</h2>
             <h2 id="photographerName"></h2>
           </div>
           <img src="assets/icons/close.svg" onclick="closeModal()" alt="fermer le formulaire de contact" tabindex="0"/>

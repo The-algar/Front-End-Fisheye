@@ -23,7 +23,7 @@ async function displayHeaderData(photographerData) {
 
     //affiche la ville du photographe
     const plocation = document.createElement('p');
-    plocation.setAttribute("aria-label", "Ville d'activité du photographe"+ ", " + photographerData.city + ", " + photographerData.country);
+    plocation.setAttribute("aria-label", "Ville d'activité du photographe" + ", " + photographerData.city + ", " + photographerData.country);
     plocation.innerHTML = photographerData.city + ", " + photographerData.country;
 
     //affiche l'accroche du photographe
@@ -62,14 +62,10 @@ async function displayMedia(photographerMedia, mediaDirectory) {
         mediaCardHtml = mediaModel.getMediaCardDOM();
         likesTotal += element.likes;
     });
-    
-    //mediaContainer.insertAdjacentHTML("beforeend", mediaCardHtml)
-    //ou var node = new DOMParser().parseFromString(mediaCardHtml, "text/html").documentElement;
-    //mediaContainer.appendChild(node);
 
     mediaContainer.innerHTML = mediaCardHtml;
     //ouverture du carousel
-    const allMedia=(Array.from(document.getElementsByClassName("media")));
+    const allMedia = (Array.from(document.getElementsByClassName("media")));
 
     allMedia.forEach(media => {
         const title = Array.from(media.children)[0].getAttribute('alt');
@@ -77,21 +73,21 @@ async function displayMedia(photographerMedia, mediaDirectory) {
             const imageAdress = Array.from(media.children)[0].getAttribute('src');
             media.children[0].addEventListener("click",(e) => displayCarousel(e, "image", imageAdress, photographerMedia, mediaDirectory, title));
             media.children[0].addEventListener("keyup", (e) => {
-                if (e.keyCode === 13) {
+                if (e.key === 13) {
                  e.preventDefault();
                  media.children[0].click();
                 }
-              });
+              })
         } else if(media.classList.value == "media video") {
             const videoAdress = Array.from(media.children)[0].getAttribute('src');
-            media.children[0].addEventListener("click",(e) => displayCarousel(e,"video",videoAdress,photographerMedia,mediaDirectory,title));
+            media.children[0].addEventListener("click",(e) => displayCarousel(e,"video", videoAdress, photographerMedia, mediaDirectory, title));
             media.children[0].addEventListener("keyup", (e) => {
-                if (e.keyCode === 13) {
+                if (e.key === 13) {
                  e.preventDefault();
                  media.children[0].click();
                 }
-              });
-        }else {
+              })
+        } else {
             null;
             }
     });
@@ -106,7 +102,7 @@ async function displayLikesAndPrice(price) {
 
 async function initPhotographer() {
     //récupère l'ID du photographe
-    const id = window.location.href.split( "=")[1].split("#")[0]; //on  ajoute .split("#")[0]; car selon le navigateur un # se rajoute à la fin de l'adresse en tappant entrer
+    const id = window.location.href.split("=")[1].split("#")[0]; //on  ajoute .split("#")[0]; car selon le navigateur un # se rajoute à la fin de l'adresse en tappant entrer
     
     // Récupère les datas des photographes en fonction de l'ID
     const allPhotographerData = await getPhotographerDataAndMedia(id);

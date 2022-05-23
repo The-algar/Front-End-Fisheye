@@ -9,12 +9,12 @@ function imageFactory(data, mediaDirectory, photographerMedia, mediaCardHtml){
         //créer la carte HTML pour l'affichage de l'image, de son titre et de ses likes
         mediaCardHtml += `
             <div class="media image">
-            <img src="./assets/images/${mediaDirectory}/${image}" alt="${title}" tabindex="0">
+            <img src="./assets/images/${mediaDirectory}/${image}" alt="${title}" tabindex="-1">
             <div class="titleAndLikes">
                 <div class="title">${title}</div>
                 <div class="likes">
-                    <div aria-label="nombre de likes" tabindex="0">${likes}&nbsp;</div>
-                    <div aria-label="cliquez pour liker"> <i class="${heartColor}" id="${title}" tabindex="0"></i></div> 
+                    <div aria-label="nombre de likes" tabindex="-1">${likes}&nbsp;</div>
+                    <div aria-label="cliquez pour liker"> <i class="${heartColor}" id="${title}" tabindex="-1"></i></div> 
                 </div> 
             </div>
         </div>
@@ -37,13 +37,13 @@ function videoFactory(data, mediaDirectory, photographerMedia, mediaCardHtml){
     function getMediaCardDOM() { 
         //créer la carte HTML pour l'affichage de la vidéo, de son titre et de ses likes
         mediaCardHtml += `<div class="media video">
-            <video src="./assets/images/${mediaDirectory}/${video}" title="${title}" tabindex="0">
+            <video src="./assets/images/${mediaDirectory}/${video}" title="${title}" tabindex="-1">
             </video>
             <div class="titleAndLikes">
                 <div class="title">${title}</div>
                 <div class="likes">
-                    <div aria-label="nombre de likes" tabindex="0">${likes}</div>
-                    <div aria-label="cliquez pour liker"><i class="${heartColor} fa-heart" id="${title}" tabindex="0"></i></div> 
+                    <div aria-label="nombre de likes" tabindex="-1">${likes}&nbsp;</div>
+                    <div aria-label="cliquez pour liker"><i class="${heartColor} fa-heart" id="${title}" tabindex="-1"></i></div> 
                 </div>
             </div>
         </div>

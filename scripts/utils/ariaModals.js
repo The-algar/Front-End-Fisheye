@@ -15,12 +15,12 @@ function ariaCompliant(modal){
     document.addEventListener('keydown', (e) => {
         if (e.code !== 9){
             return;
-        }else if (e.shiftKey) { //pour un shift+tab
-            if(document.activeElement==firstFocusableElement){
+        } else if (e.shiftKey) { //pour un shift+tab
+            if(document.activeElement == firstFocusableElement){
                 lastFocusableElement.focus();
                 e.preventDefault();
             }
-        }else { //pour un tab
+        } else { //pour un tab
             if(document.activeElement==lastFocusableElement){
                 firstFocusableElement.focus();
                 e.preventDefault();

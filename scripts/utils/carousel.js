@@ -36,12 +36,14 @@ function displayCarousel(e, typeOfMedia, mediaAdress, photographerMedia, mediaDi
 
     //navigation clavier
     ariaCompliant(carousel);
-    document.addEventListener('keydown',(e)=>{
-        if(e.code == 27 && carousel.getAttribute('aria-hidden')=='false'){
+    document.addEventListener('keydown', (e) => {
+        if(e.code == 27 && carousel.getAttribute('aria-hidden') == 'false') {
             closeCarousel()
-        }else if (e.code == 37 && carousel.getAttribute('aria-hidden')=='false'){
+
+        } else if (e.code == 37 && carousel.getAttribute('aria-hidden') == 'false'){
             changeMedia(e,photographerMedia,rank-1,mediaDirectory)
-        }else if (e.code == 39 && carousel.getAttribute('aria-hidden')=='false'){
+
+        } else if (e.code == 39 && carousel.getAttribute('aria-hidden') == 'false'){
             changeMedia(e,photographerMedia,rank+1,mediaDirectory)
         }
     })
@@ -51,23 +53,25 @@ function closeCarousel(){
     carousel.setAttribute('aria-hidden','true');
     main.setAttribute('aria-hidden','false');
     carousel.style.display = "none";
-    document.querySelector(".carousel_media").innerHTML="";
+    document.querySelector(".carousel_media").innerHTML = " ";
 }
 
-function rankInCarousel(photographerMedia,media){
-    return photographerMedia.findIndex(object=>object.image==media||object.video==media);
+function rankInCarousel(photographerMedia,media) {
+    return photographerMedia.findIndex(object => object.image == media || object.video == media);
 }
 
-function changeMedia(e,photographerMedia,rank,mediaDirectory){ 
+function changeMedia(e,photographerMedia,rank,mediaDirectory) { 
     //faire un carousel infini
     if (rank<0) {
         rank = photographerMedia.length-1}
         else if (rank>photographerMedia.length-1) {
         rank = 0 };
+
     //déclaration des variables 
     var typeOfMedia = " ";
     var mediaAdress = " ";
     var title = " ";
+
     //determine typeOfMedia et mediaAdress du media à afficher
     if (Object.keys(photographerMedia[rank]).find(key => key == "image")) {
         typeOfMedia = "image";
