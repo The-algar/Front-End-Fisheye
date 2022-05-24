@@ -22,7 +22,7 @@ async function displayHeaderData(photographerData) {
     h2.innerHTML = photographerData.name;
 
     //affiche la ville du photographe
-    const plocation = document.createElement('p');
+    const plocation = document.createElement('span');
     plocation.setAttribute("aria-label", "Ville d'activité du photographe" + ", " + photographerData.city + ", " + photographerData.country);
     plocation.innerHTML = photographerData.city + ", " + photographerData.country;
 

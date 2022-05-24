@@ -31,7 +31,7 @@ function displayCarousel(e, typeOfMedia, mediaAdress, photographerMedia, mediaDi
 
     //croix de fermeture
     const close = document.getElementById("close");
-    close.innerHTML = '<i class="fas fa-times" id="close" aria-label="fermer le carousel" tabindex="-1"></i>';
+    close.innerHTML = '<i class="fas fa-times" id="close" aria-label="fermer le carousel" tabindex="0"></i>';
     close.addEventListener("click", (e) => closeCarousel());
 
     //navigation clavier

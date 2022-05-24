@@ -1,6 +1,9 @@
 //navigation au clavier dans les modales
 function ariaCompliant(modal){
-    if (modal.style.display == "none") { return };
+    if (modal.style.display == "none") { 
+        return 
+    };
+    
     //blocage du tab dans la modale
     document.addEventListener('keydown', (e) => {
         if(e.code == 27) {

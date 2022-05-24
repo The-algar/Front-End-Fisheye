@@ -20,8 +20,7 @@ function photographerFactory(data) {
         const h2 = document.createElement( 'h2' );
         h2.textContent = name;
 
-        const location = document.createElement( 'p' );
-        
+        const location = document.createElement( 'span' );
         location.textContent = city + ", " + country;
 
         const h3 = document.createElement( 'h3' );
