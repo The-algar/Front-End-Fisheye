@@ -112,5 +112,6 @@ h1 {
     /* intégrer les thumnails dans un cercle */
     border-radius : 50%;
     /* Modifiez une propriété CSS dans style.css pour vérifier que tout est bien connecté. */
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
     /* border: 2px solid #901C1C; */
 }
