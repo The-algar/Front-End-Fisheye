@@ -8,7 +8,7 @@ function displayCarousel(e, typeOfMedia, mediaAdress, photographerMedia, mediaDi
         document.querySelector(".carousel_media").innerHTML = "<img src=" + mediaAdress + " alt=" + title + " tabindex='0'>";
     }
     else if(typeOfMedia == "video") {
-        document.querySelector(".carousel_media").innerHTML = "<video src=" + mediaAdress + " autoplay title=" + title + " tabindex='0'></video>";
+        document.querySelector(".carousel_media").innerHTML = "<video controls src=" + mediaAdress + " autoplay title=" + title + " tabindex='0'></video>";
     }
     else {
         console.log("error while displaying carousel");

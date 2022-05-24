@@ -381,22 +381,26 @@ a:visited {
 
 /***** TOTAL LIKES *****/
 
-.likesTotal{
-    position:absolute;
+.likesTotal {
     position: fixed;
-    bottom:0;
-    right:20px;
-    background-color: #DB8876;
-    color: white;
-    width: 200px;
-    height: 30px;
     display: flex;
     justify-content: space-between;
-    padding: 0 20px;
-    align-items: center;
+    bottom:0;
+    right: 40px;
+    width: 250px;
+    background: #DB8876;
+    padding: 20px 30px;
+    color: black;
+    border-radius: 0.3em 0.3em 0 0;
 }
-.likesTotal .fa-heart{
-    color: white;
+
+.likesTotal .fa-heart {
+    color: black;
+}
+
+.photographerLikes, .fa-heart, .price {
+    font-size: 24px;
+    font-size: x-large;
 }
 
 /***** CAROUSEL *****/
