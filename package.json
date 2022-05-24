@@ -18,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/The-algar/Front-End-Fisheye/issues"
   },
-  "homepage": "https://github.com/The-algar/Front-End-Fisheye#readme"
+  "homepage": "https://github.com/The-algar/Front-End-Fisheye#readme",
+  "devDependencies": {
+    "eslint": "^8.16.0"
+  }
 }
