@@ -13,8 +13,8 @@ function imageFactory(data, mediaDirectory, photographerMedia, mediaCardHtml){
             <div class="titleAndLikes">
                 <div class="title">${title}</div>
                 <div class="likes">
-                    <div aria-label="nombre de likes" tabindex="-1">${likes}&nbsp;</div>
-                    <div aria-label="cliquez pour liker"> <i class="${heartColor}" id="${title}" tabindex="-1"></i></div> 
+                    <h4 aria-label="nombre de likes" tabindex="-1">${likes}&nbsp;</h4>
+                    <h3 aria-label="cliquez pour liker"><i class="${heartColor}" id="${title}" tabindex="-1"></i></h3> 
                 </div> 
             </div>
         </div>
@@ -42,8 +42,8 @@ function videoFactory(data, mediaDirectory, photographerMedia, mediaCardHtml){
             <div class="titleAndLikes">
                 <div class="title">${title}</div>
                 <div class="likes">
-                    <div aria-label="nombre de likes" tabindex="-1">${likes}&nbsp;</div>
-                    <div aria-label="cliquez pour liker"><i class="${heartColor} fa-heart" id="${title}" tabindex="-1"></i></div> 
+                    <h4 aria-label="nombre de likes" tabindex="-1">${likes}&nbsp;</h4>
+                    <h3 aria-label="cliquez pour liker"><i class="${heartColor} fa-heart" id="${title}" tabindex="-1"></i></h3> 
                 </div>
             </div>
         </div>

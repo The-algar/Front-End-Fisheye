@@ -22,12 +22,12 @@ async function displayHeaderData(photographerData) {
     h2.innerHTML = photographerData.name;
 
     //affiche la ville du photographe
-    const plocation = document.createElement('span');
+    const plocation = document.createElement('h3');
     plocation.setAttribute("aria-label", "Ville d'activité du photographe" + ", " + photographerData.city + ", " + photographerData.country);
     plocation.innerHTML = photographerData.city + ", " + photographerData.country;
 
     //affiche l'accroche du photographe
-    const h3 = document.createElement('h3');
+    const h3 = document.createElement('h4');
     h3.innerHTML = photographerData.tagline;
     h3.setAttribute("aria-label","Accroche du photographe" + " : " + photographerData.tagline);
 
@@ -73,7 +73,7 @@ async function displayMedia(photographerMedia, mediaDirectory) {
             const imageAdress = Array.from(media.children)[0].getAttribute('src');
             media.children[0].addEventListener("click",(e) => displayCarousel(e, "image", imageAdress, photographerMedia, mediaDirectory, title));
             media.children[0].addEventListener("keyup", (e) => {
-                if (e.key === 13) {
+                if (e.key === Enter) {
                  e.preventDefault();
                  media.children[0].click();
                 }
@@ -82,7 +82,7 @@ async function displayMedia(photographerMedia, mediaDirectory) {
             const videoAdress = Array.from(media.children)[0].getAttribute('src');
             media.children[0].addEventListener("click",(e) => displayCarousel(e,"video", videoAdress, photographerMedia, mediaDirectory, title));
             media.children[0].addEventListener("keyup", (e) => {
-                if (e.key === 13) {
+                if (e.key === Enter) {
                  e.preventDefault();
                  media.children[0].click();
                 }

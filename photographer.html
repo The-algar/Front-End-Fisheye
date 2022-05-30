@@ -20,12 +20,12 @@
       </div>
 
     <div class="menu">
-      <div class="sort" aria-label="triez les photos par titre, date ou popularité">Trier par
+      <div class="sort">Trier par
         <container id="sortingMenu" aria-haspopup="true"
-        aria-label="Triez par" tabindex="-1">
-          <button aria-hidden="false" id="openMenuButton" class="chevron-icon fas fa-chevron-down" aria-label="cliquez pour ouvrir le menu"></button>
-          <span class="option selected" id="option1" tabindex="-1">Nom</span>
-          <span class="option" id="option2" tabindex="-1">Date</span>
+        aria-label="triez les photos par titre, date ou popularité" tabindex="-1">
+          <button aria-hidden="false" id = "openMenuButton" class = "chevron-icon fas fa-chevron-down" aria-label="cliquez pour ouvrir le menu"></button>
+          <span class="option selected" id = "option1" tabindex = "-1">Nom</span>
+          <span class="option" id="option2" tabindex = "-1">Date</span>
           <span class="option last" id="option3" tabindex = "-1">Popularité</span>
         </container>
       </div>
@@ -34,16 +34,16 @@
       <div class="media-container"></div>
 
       <div class="likesTotal" role="complementary">
-        <div class=photographerLikes></div>
-        <div class=price></div>
+        <h2 class=photographerLikes></h2>
+        <h2 class=price></h2>
     </div>
   </main>
 
-    <div id="contact_modal" aria-hidden="true" role="dialog" tabindex="-1">
+    <div id="contact_modal" aria-hidden="true" role="dialog" tabindex="0">
 			<div class="modal">
 				<header>
-          <div class="contactHeader" tabindex="0" aria-label="contactez le photographe">
-            <h2 id="modalTitle">Contactez-moi</h2>
+          <div class="contactHeader" tabindex="0">
+            <h2 id="modalTitle" aria-label="contactez le photographe">Contactez-moi</h2>
             <h2 id="photographerName"></h2>
           </div>
           <img src="assets/icons/close.svg" onclick="closeModal()" alt="fermer le formulaire de contact" tabindex="0"/>
@@ -72,11 +72,12 @@
 				</form>
 			</div>
 		</div>
-    <div id="carousel_modal" aria-hidden="true" role="dialog" aria-label="carousel d'images" tabindex="-1">
-      <div id="left-arrow"></div>
-      <div id="right-arrow"></div>
-      <div id="close"></div>
-      <span class="carousel_media"></span>
+    <div id="carousel_modal" aria-hidden="true" role="dialog" aria-label="carousel d'images" tabindex="0">
+      <div id = "left-arrow"></div>
+      <div id = "right-arrow"></div>
+      <div id = "close"></div>
+      <div class = "carousel_media" hidden></div>
+      <div class="title"></div>
     </div>
     <script src="scripts/factories/media.js"></script>
     <script src="scripts/utils/sortMedia.js"></script>
