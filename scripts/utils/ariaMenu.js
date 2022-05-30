@@ -11,7 +11,7 @@ function ariaMenu() {
         //si on est dans le menu, on écoute les fleches
         if(active == sortingMenu || active == option1 || active == option2 || active == option3) {
                 //Key up
-                if(e.key == 38) {
+                if(e.key == 38) {//Arrow up Key
                 e.preventDefault();
                 if (focusedOption == " " || focusedOption == option2) {
                     option1.focus();
@@ -25,7 +25,7 @@ function ariaMenu() {
                 } else { 
                     null
                 }
-            } else if (e.key == 40 ){//key down
+            } else if (e.key == 40 ){//Arrow down Key
                 e.preventDefault();
                 if (focusedOption == " " || focusedOption == option3) {
                     option1.focus();
@@ -39,11 +39,11 @@ function ariaMenu() {
                 } else { 
                     null
                 }
-            }else if (e.key == 9){
+            }else if (e.key == 9){//Tab Key
                 closeMenu();
             };
         //si on est sur le bouton du menu on écoute "entrer"
-        } else if (e.key === 13 && document.activeElement == openMenuButton) {
+        } else if (e.key === 13 && document.activeElement == openMenuButton) {//Enter Key
             e.preventDefault();
             document.activeElement.click();
         }
