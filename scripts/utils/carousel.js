@@ -4,17 +4,16 @@ function displayCarousel(e, typeOfMedia, mediaAdress, photographerMedia, mediaDi
     carousel.setAttribute('aria-hidden','false');
     main.setAttribute('aria-hidden','true');
     carousel.style.display = "block";
+    const carouselMedia = document.querySelector(".carousel_media");
     if (typeOfMedia == "image") {
-        document.querySelector(".carousel_media").innerHTML = "<img src="+mediaAdress+" alt="+title+" tabindex='0'>";
-   
-    }
-    else if(typeOfMedia == "video") {
-        document.querySelector(".carousel_media").innerHTML = "<video controls src="+mediaAdress+" autoplay title="+title+" tabindex='0'></video>";
-    }
-    else {
+        carouselMedia.innerHTML = "<img src=" + mediaAdress + " title=" + title + " tabindex='0'>";
+    } else if(typeOfMedia == "video") {
+        carouselMedia.innerHTML = "<video controls src=" + mediaAdress + " autoplay title=" + title +" tabindex='0'></video>";
+    } else {
         console.log("error while displaying carousel");
-
-    }//récupère le nom du fichier
+    }
+    //récupère le nom du fichier
+    /* carouselMedia.innerHTML = '${carouselMedia.innerHTML}<div class="title">${title}</div>'; */
     const media = mediaAdress.split('/')[mediaAdress.split('/').length-1];
 
     //récupère l'index du media dans le tableau de media trié
@@ -38,14 +37,14 @@ function displayCarousel(e, typeOfMedia, mediaAdress, photographerMedia, mediaDi
     //navigation clavier
     ariaCompliant(carousel);
     document.addEventListener('keydown', (e) => {
-        if(e.code == 27 && carousel.getAttribute('aria-hidden') == 'false') {
+        if(e.code == "Close" && carousel.getAttribute('aria-hidden') == 'false') {
             closeCarousel()
 
-        } else if (e.code == 37 && carousel.getAttribute('aria-hidden') == 'false'){
-            changeMedia(e,photographerMedia,rank-1,mediaDirectory)
+        } else if (e.code == "ArrowLeft" && carousel.getAttribute('aria-hidden') == 'false'){
+            changeMedia(e, photographerMedia, rank-1, mediaDirectory)
 
-        } else if (e.code == 39 && carousel.getAttribute('aria-hidden') == 'false'){
-            changeMedia(e,photographerMedia,rank+1,mediaDirectory)
+        } else if (e.code == "ArrowRight" && carousel.getAttribute('aria-hidden') == 'false'){
+            changeMedia(e, photographerMedia, rank+1, mediaDirectory)
         }
     })
 }
@@ -74,21 +73,20 @@ function changeMedia(e,photographerMedia,rank,mediaDirectory) {
     var title = " ";
 
     //determine typeOfMedia et mediaAdress du media à afficher
-    if (Object.keys(photographerMedia[rank]).find(key => key == "image")) {
+    if (Object.keys (photographerMedia[rank]).find(key => key == "image")) {
         typeOfMedia = "image";
         const image = photographerMedia[rank].image;
         mediaAdress = "./assets/images/" + mediaDirectory + "/" + image;
         title = photographerMedia[rank].title;
-    } 
-    else if(Object.keys(photographerMedia[rank]).find(key => key == "video")){
+    } else if (Object.keys(photographerMedia[rank]).find(key => key == "video")){
         typeOfMedia = "video";
         const video = photographerMedia[rank].video;
         mediaAdress = "./assets/images/" + mediaDirectory + "/" + video;
         title = photographerMedia[rank].video.replaceAll('_', ' ');
         title = title.replace('.mp4', ' ');
-    } 
-    else {
+    } else {
         console.log("problem in loadedMedia()");
     }
+
     displayCarousel(e, typeOfMedia, mediaAdress, photographerMedia, mediaDirectory, title);
 }
