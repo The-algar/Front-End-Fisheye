@@ -11,11 +11,11 @@ function ariaMenu() {
         //si on est dans le menu, on écoute les fleches
         if(active == sortingMenu || active == option1 || active == option2 || active == option3) {
                 //Key up
-                if(e.key == 38) {
+                if(e.key ==         ) {
                 e.preventDefault();
                 if (focusedOption == " " || focusedOption == option2) {
                     option1.focus();
-                    focusedOption = option1;
+                    focusedOption = option1;        
                 } else if(focusedOption == option1) {
                     option3.focus();
                     focusedOption = option3;

@@ -7,7 +7,7 @@ function displayCarousel(e, typeOfMedia, mediaAdress, photographerMedia, mediaDi
     const carouselMedia = document.querySelector(".carousel_media");
     if (typeOfMedia == "image") {
         carouselMedia.innerHTML = "<img src=" + mediaAdress + " title=" + title + " tabindex='0'>";
-    } else if(typeOfMedia == "video") {
+    } else if (typeOfMedia == "video") {
         carouselMedia.innerHTML = "<video controls src=" + mediaAdress + " autoplay title=" + title +" tabindex='0'></video>";
     } else {
         console.log("error while displaying carousel");
