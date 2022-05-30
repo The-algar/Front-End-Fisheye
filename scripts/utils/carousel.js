@@ -6,14 +6,14 @@ function displayCarousel(e, typeOfMedia, mediaAdress, photographerMedia, mediaDi
     carousel.style.display = "block";
     const carouselMedia = document.querySelector(".carousel_media");
     if (typeOfMedia == "image") {
-        carouselMedia.innerHTML = "<img src=" + mediaAdress + " title=" + title + " tabindex='0'>";
+        carouselMedia.innerHTML = "<img src="+mediaAdress+" title="+title+" tabindex='0'>";
     } else if (typeOfMedia == "video") {
-        carouselMedia.innerHTML = "<video controls src=" + mediaAdress + " autoplay title=" + title +" tabindex='0'></video>";
+        carouselMedia.innerHTML = "<video controls src="+mediaAdress+" autoplay title="+title+" tabindex='0'></video>";
     } else {
         console.log("error while displaying carousel");
     }
     //récupère le nom du fichier
-    /* carouselMedia.innerHTML = '${carouselMedia.innerHTML}<div class="title">${title}</div>'; */
+    /*carouselMedia.innerHTML = "${carouselMedia.innerHTML}<div class='title'>${title}</div>"; */
     const media = mediaAdress.split('/')[mediaAdress.split('/').length-1];
 
     //récupère l'index du media dans le tableau de media trié

@@ -39,7 +39,7 @@ function ariaMenu() {
                 } else { 
                     null
                 }
-            }else if (e.key == 9){//Tab Key
+            } else if (e.key == 9){//Tab Key
                 closeMenu();
             };
         //si on est sur le bouton du menu on écoute "entrer"
