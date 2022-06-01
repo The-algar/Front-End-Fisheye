@@ -6,14 +6,16 @@ function displayCarousel(e, typeOfMedia, mediaAdress, photographerMedia, mediaDi
     carousel.style.display = "block";
     const carouselMedia = document.querySelector(".carousel_media");
     if (typeOfMedia == "image") {
-        carouselMedia.innerHTML = "<img src="+mediaAdress+" title="+title+" tabindex='0'>";
+        carouselMedia.innerHTML = "<img src="+mediaAdress+" title="+title+" ('aria-hidden','false') tabindex='0'>";
     } else if (typeOfMedia == "video") {
         carouselMedia.innerHTML = "<video controls src="+mediaAdress+" autoplay title="+title+" tabindex='0'></video>";
     } else {
         console.log("error while displaying carousel");
     }
+
     //récupère le nom du fichier
-    /*carouselMedia.innerHTML = "${carouselMedia.innerHTML}<div class='title'>${title}</div>"; */
+    carouselMedia.innerHTML = `${carouselMedia.innerHTML}
+    <p class ="cTitle">${title}</p>`;
     const media = mediaAdress.split('/')[mediaAdress.split('/').length-1];
 
     //récupère l'index du media dans le tableau de media trié
@@ -37,7 +39,7 @@ function displayCarousel(e, typeOfMedia, mediaAdress, photographerMedia, mediaDi
     //navigation clavier
     ariaCompliant(carousel);
     document.addEventListener('keydown', (e) => {
-        if(e.code == "Close" && carousel.getAttribute('aria-hidden') == 'false') {
+        if(e.code == "Escape" && carousel.getAttribute('aria-hidden') == 'false') {
             closeCarousel()
 
         } else if (e.code == "ArrowLeft" && carousel.getAttribute('aria-hidden') == 'false'){
