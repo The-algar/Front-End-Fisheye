@@ -102,14 +102,14 @@ async function displayLikesAndPrice(price) {
 
 async function initPhotographer() {
     //récupère l'ID du photographe
-    const id = window.location.href.split("=")[1].split("#")[0]; //on  ajoute .split("#")[0]; car selon le navigateur un # se rajoute à la fin de l'adresse en tappant entrer
+    const id = window.location.href.split("=")[1]; //.split("#")[0]; on  ajoute .split("#")[0]; car selon le navigateur un # se rajoute à la fin de l'adresse en tappant entrer
     
     // Récupère les datas des photographes en fonction de l'ID
     const allPhotographerData = await getPhotographerDataAndMedia(id);
     const photographerData = allPhotographerData[0];
     const photographerMedia = allPhotographerData[1];
     document.getElementById("photographerName").innerHTML = photographerData.name;
-    var mediaDirectory=photographerData.name.split(' ');
+    var mediaDirectory = photographerData.name.split(' ');
     mediaDirectory.pop();
 
     //Affiche les données du photographe
