@@ -15,19 +15,19 @@ function displayCarousel(e, typeOfMedia, mediaAdress, photographerMedia, mediaDi
 
     //récupère le nom du fichier
     carouselMedia.innerHTML = `${carouselMedia.innerHTML}
-    <p class ="cTitle">${title}</p>`;
+    <p>${title}</p>`;
     const media = mediaAdress.split('/')[mediaAdress.split('/').length-1];
 
     //récupère l'index du media dans le tableau de media trié
     const rank = rankInCarousel(photographerMedia, media);
 
     //chevron de gauche
-    const left = document.getElementById("left-arrow");
+    const left = document.getElementById("arrowLeft");
     left.innerHTML = '<i class="fas fa-chevron-left" aria-label="image précédente" tabindex="0"></i>';
     left.addEventListener("click", (e) => changeMedia(e, photographerMedia, rank-1, mediaDirectory));
 
     //chevron de droite
-    const right = document.getElementById("right-arrow");
+    const right = document.getElementById("arrowRight");
     right.innerHTML = '<i class="fas fa-chevron-right" aria-label="image suivante" tabindex="0"></i>';
     right.addEventListener("click", (e) => changeMedia(e, photographerMedia, rank+1, mediaDirectory));
 
@@ -42,10 +42,10 @@ function displayCarousel(e, typeOfMedia, mediaAdress, photographerMedia, mediaDi
         if(e.code == "Escape" && carousel.getAttribute('aria-hidden') == 'false') {
             closeCarousel()
 
-        } else if (e.code == "ArrowLeft" && carousel.getAttribute('aria-hidden') == 'false'){
+        } else if (e.code == "arrowLeft" && carousel.getAttribute('aria-hidden') == 'false'){
             changeMedia(e, photographerMedia, rank-1, mediaDirectory)
 
-        } else if (e.code == "ArrowRight" && carousel.getAttribute('aria-hidden') == 'false'){
+        } else if (e.code == "arrowRight" && carousel.getAttribute('aria-hidden') == 'false'){
             changeMedia(e, photographerMedia, rank+1, mediaDirectory)
         }
     })

@@ -422,14 +422,16 @@ a:visited {
     cursor: pointer;
 }
 
-#left-arrow {
+#arrowLeft {
     top:50vh;
     left: 2vh;
+    z-index: 101;
 }
-#right-arrow {
+#arrowRight {
     top:50vh;
     right:4vh;
 }
+
 #close {
     top:2vh;
     right:2vh;
@@ -456,6 +458,8 @@ a:visited {
 
 .carousel_media img,
 .carousel_media video {
+    display: flex;
+    justify-content: space-around;
     max-width: 100%;
     max-height: 100%;
     -o-object-fit: scale-down;
@@ -464,11 +468,11 @@ a:visited {
 }
 
 .carousel_media p {
-    position:relative;
-    display: flex;
-    flex-direction: column;
+    max-width: -webkit-max-content;
+    max-width: -moz-max-content;
+    max-width: max-content;
     margin: 10px 0;
-    padding-left: 1vw;
+    padding-left: 0;
     font-size: 1.5rem;
 }
 
