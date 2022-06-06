@@ -45,10 +45,10 @@
           </div>
           <img src="assets/icons/close.svg" onclick="closeModal()" alt="fermer le formulaire de contact" tabindex="0"/>
         </header>
-				<form>
+				<form  id="send">
 					<div>
-						<label for="firstName">Prénom</label>
-						<input id="firstName"/>
+						<label for = "firstName">Prénom</label>
+						<input id = "firstName"/>
             <div id='logFirstName'></div>
 					</div>
           <div>
@@ -65,7 +65,7 @@
 						<label for="message">Votre message</label>
 						<input id="message"/>
 					</div>
-          <button class="contact_button" aria-label="bouton d'envoi" id="send">Envoyer</button>
+          <button class = "contact_button" type = "submit" aria-label="bouton d'envoi">Envoyer</button>
 				</form>
 			</div>
 		</div>

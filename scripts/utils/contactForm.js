@@ -14,7 +14,7 @@ function displayModal() {
     const submitBtn = document.getElementById("send");
 
     // au clic sur "envoyer" on n'envoie que s'il n'y a pas d'erreur dans les champs (all errors = 0)
-    submitBtn.addEventListener("click",(e) => {
+    submitBtn.addEventListener("submit",(e) => {
         let errorFirstName = firstNameError(firstName.value);
         let errorLastName = lastNameError(lastName.value);
         let errorEmail = emailError(email.value);
@@ -28,14 +28,6 @@ function displayModal() {
         } else {
             e.preventDefault();
             return
-        }
-    });
-
-    //"envoyer" cliquable au clavier
-    submitBtn.addEventListener("keyup", (e) => {
-        if (e.key === enter) {
-            e.preventDefault();
-            submitBtn.click();
         }
     });
 }

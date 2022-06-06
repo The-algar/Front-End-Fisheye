@@ -79,13 +79,13 @@ function changeMedia(e,photographerMedia,rank,mediaDirectory) {
         typeOfMedia = "image";
         const image = photographerMedia[rank].image;
         mediaAdress = "./assets/images/" + mediaDirectory + "/" + image;
-        title = photographerMedia[rank].title;
+        title = photographerMedia[rank].title.replaceAll('_', '');
     } else if (Object.keys(photographerMedia[rank]).find(key => key == "video")){
         typeOfMedia = "video";
         const video = photographerMedia[rank].video;
         mediaAdress = "./assets/images/" + mediaDirectory + "/" + video;
-        title = photographerMedia[rank].video.replaceAll('_', ' ');
-        title = title.replace('.mp4', ' ');
+        title = photographerMedia[rank].video.replaceAll('_', '');
+        title = title.replace('.mp4', ''); //.replace(/[0-9]/g, '');
     } else {
         console.log("problem in loadedMedia()");
     }
