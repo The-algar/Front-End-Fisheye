@@ -84,8 +84,9 @@ function changeMedia(e,photographerMedia,rank,mediaDirectory) {
         typeOfMedia = "video";
         const video = photographerMedia[rank].video;
         mediaAdress = "./assets/images/" + mediaDirectory + "/" + video;
-        title = photographerMedia[rank].video.replaceAll('_', '');
+        title = photographerMedia[rank].video.replaceAll('_', ' ');
         title = title.replace('.mp4', ''); //.replace(/[0-9]/g, '');
+        title = title.replace(/[0-9]/g, '');
     } else {
         console.log("problem in loadedMedia()");
     }

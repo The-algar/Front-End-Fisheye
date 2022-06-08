@@ -41,11 +41,10 @@ function ariaMenu() {
                 }
             } else if (e.key == "tab"){//Tab Key
                 closeMenu();
+            } else if (e.key == "Enter") {
+                document.activeElement.click();
+                //closeMenu();
             };
-        //si on est sur le bouton du menu on écoute "entrer"
-        } else if (e.key === "enter" && document.activeElement == openMenuButton) {//Enter Key
-            e.preventDefault();
-            document.activeElement.click();
         }
     })  
 }

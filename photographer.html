@@ -14,19 +14,19 @@
     <header>
       <a href=index.html><img src="assets/images/logo.png" class="logo" alt="lien vers la page principale"/></a>
     </header>
-    <main id="main" aria-hidden="false">
+    <main id="main" role="main" aria-hidden="false">
       <div class="photograph-header">
         <button class="contact_button" onclick="displayModal()">Contactez-moi</button>
       </div>
 
-    <div class="menu">
+    <div class="menu" role="listbox">
       <div class="sort">Trier par
         <container id="sortingMenu" aria-haspopup="true"
         aria-label="triez les photos par titre, date ou popularité" tabindex="-1">
           <button aria-hidden="false" id="openMenuButton" class="chevron-icon fas fa-chevron-down" aria-label="cliquez pour ouvrir le menu"></button>
-          <span class="option selected" id="option1" value="title" role=”listbox” aria-label="triez par nom" aria-activedescendant="false" aria-selected="false" tabindex = "-1">Nom</span>
-          <span class="option" id="option2" value="date" role=”listbox” aria-label="triez par date" aria-activedescendant="false" aria-selected="false" tabindex = "-1">Date</span>
-          <span class="option last" id="option3" value="popularity" role=”listbox” aria-label="triez par popularité" aria-activedescendant="false" aria-selected="false" tabindex = "-1">Popularité</span>
+          <span class="option selected" id="option1" value="name" tabindex = "-1">Nom</span>
+          <span class="option" id="option2" value="date" tabindex = "-1">Date</span>
+          <span class="option last" id="option3" value="popularity" tabindex = "-1">Popularité</span>
         </container>
       </div>
     </div>
