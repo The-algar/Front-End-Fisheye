@@ -27,7 +27,7 @@ function manageLikes(likesTotal, photographerMedia, mediaDirectory) {
         })
         //liker au clavier avec entrée
         heart.addEventListener("keyup", (e) => {
-            if (e.keyCode === 13) {
+            if (e.key=== 13) {
              e.preventDefault();
              heart.click();
             }
