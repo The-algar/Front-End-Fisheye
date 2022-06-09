@@ -25,7 +25,7 @@ function ariaMenu() {
                 } else { 
                     null
                 }
-            } else if (e.key == "down arrow" ){//Arrow down Key
+            } else if (e.key == "down arrow" ) {//Arrow down Key
                 e.preventDefault();
                 if (focusedOption == " " || focusedOption == option3) {
                     option1.focus();
@@ -39,7 +39,7 @@ function ariaMenu() {
                 } else { 
                     null
                 }
-            } else if (e.key == "tab"){//Tab Key
+            } else if (e.key == "tab") {//Tab Key
                 closeMenu();
             } else if (e.key == "Enter") {
                 document.activeElement.click();

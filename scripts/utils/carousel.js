@@ -64,7 +64,7 @@ function rankInCarousel(photographerMedia,media) {
 
 function changeMedia(e,photographerMedia,rank,mediaDirectory) { 
     //faire un carousel infini
-    if (rank<0) {
+    if (rank < 0) {
         rank = photographerMedia.length-1}
         else if (rank>photographerMedia.length-1) {
         rank = 0 };
