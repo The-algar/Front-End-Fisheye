@@ -40,7 +40,7 @@ function addLikeInPhotographerMedia(photographerMedia, mediaLikes, title) {
     let media=findObjectByKey(photographerMedia, "title", title);
 
     media.likes = mediaLikes;
-    media.liked = "far fa-heart";
+    media.liked = "fas fa-heart";
 
     return photographerMedia
 }
